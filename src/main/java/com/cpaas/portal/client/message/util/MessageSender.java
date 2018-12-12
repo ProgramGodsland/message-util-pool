@@ -38,11 +38,15 @@ public class MessageSender {
   @Autowired
   private Producer producer;
   
+  @Autowired
+  private MessageFactory msgFactory;
+  
   public void sendNotification(String routingKey, Message message) throws Exception {
     if (null == message.getMessageParams()) {
       throw new Exception("Invalid request");
     }
     try {
+      msgFactory.wrapNotificationMessage(message);
       producer.sendMessage(message, routingKey);
     } catch (Exception e) {
       System.err.println("Unable to send message!");
