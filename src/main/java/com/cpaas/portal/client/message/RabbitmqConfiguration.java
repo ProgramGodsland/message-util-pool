@@ -91,7 +91,7 @@ public class RabbitmqConfiguration {
     return this.queueName;
   }
 
-  public MessagePropertiesLoader getMessagePropertiesLoader() {
-    return this.propertiesLoader;
+  public MessageProperties getMessageProperties() {
+    return this.properties;
   }
 }

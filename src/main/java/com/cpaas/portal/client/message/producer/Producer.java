@@ -107,8 +107,4 @@ public class Producer {
       }
       return result;
     }
-
-    
-    
-
 }
